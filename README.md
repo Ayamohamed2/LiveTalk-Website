@@ -23,15 +23,15 @@ The project is designed with **scalability, performance, security, and clean arc
 - SQL Server  
 - ASP.NET Identity  
 - JWT Authentication  
+- API Versioning
+- Serilog Logging
+- xUnit Testing
+- Integration Testing
 - Rate Limiting  
-- Background Services  
-- Custom Middlewares  
-
-### 🔹 Frontend
-- HTML  
-- CSS  
-- JavaScript  
-- SignalR Client  
+- Background Services
+- Health Checks  
+- Custom Middlewares 
+ 
 
 ---
 
@@ -171,39 +171,55 @@ LiveTalk implements a **secure and production-ready authentication system** usin
 - Real-time call signaling  
 - Active call tracking  
 - Call lifecycle management  
-- Automatic call cleanup on disconnect  
+- Automatic call cleanup on disconnect   
 
 ---
 
-## 🧠 Background Services
+## 🧪 Testing
 
-### Cleanup Background Service
-Runs scheduled cleanup tasks automatically:
-- Remove old deleted messages  
-- Remove old call logs  
-- Deactivate inactive groups  
-- Clean inactive blocked users  
+LiveTalk includes comprehensive testing to ensure API reliability and maintainability.
 
----
+### Testing Types
+- Unit Testing using xUnit & Moq
+- Integration Testing using WebApplicationFactory
+- Controller endpoint testing
+- Service layer testing
+- HTTP status code verification
 
+### Testing Tools
+- xUnit
+- Moq
+- FluentAssertions
+- ASP.NET Core Integration Testing
+  
 ## 🧯 Custom Middlewares
 
 - Global Exception Handling Middleware  
 - Blacklisted Token Middleware  
 - Centralized error responses  
-- Secure token validation  
+- Secure token validation
+  
+---
+
+## 📊 Logging & Monitoring
+
+- Structured logging using Serilog
+- Request / response logging
+- Centralized exception logging
+- Health Check endpoints for monitoring system health
+- Performance-friendly logging configuration
 
 ---
 
-## 🚦 Rate Limiting
+## 🔀 API Versioning
 
-Custom rate limiting strategies to protect the API:
-- Global API limiter  
-- Authentication limiter  
-- Message sending limiter  
-- Group operations limiter  
-- Custom **429** responses with `Retry-After` support  
-
+- Versioned REST APIs
+- Supports scalable API evolution
+- Route-based API versioning
+- Example:
+  - `/api/v1/...`
+  - `/api/v2/...`
+    
 ---
 
 ## 🗄 Database
@@ -212,8 +228,15 @@ Custom rate limiting strategies to protect the API:
 - Optimized relational schema  
 - Indexed queries for high chat performance  
 - Soft delete strategy for messages  
-- Efficient unread message count queries  
+- Efficient unread message count queries
+  
+---
 
+## ❤️ Health Checks
+
+- Application health monitoring
+- Database connectivity checks
+- Ready for production deployment monitoring
 ---
 
 ## ⭐ Project Highlights
